@@ -7,28 +7,63 @@ import Group from '@vkontakte/vkui/dist/components/Group/Group';
 import Cell from '@vkontakte/vkui/dist/components/Cell/Cell';
 import Div from '@vkontakte/vkui/dist/components/Div/Div';
 import Avatar from '@vkontakte/vkui/dist/components/Avatar/Avatar';
+import { FormLayout, Select } from '@vkontakte/vkui';
 
 
 const Home = ({ id, go, fetchedUser }) => (
 	<Panel id={id}>
-		<PanelHeader>GetWet</PanelHeader>
+		<PanelHeader>Твой ПК</PanelHeader>
 		{fetchedUser &&
-		<Group title="User Data Fetched with VK Bridge">
-			<Cell
-				before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
-				description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
-			>
-				{`${fetchedUser.first_name} ${fetchedUser.last_name} ${fetchedUser.bdate}`}
-			</Cell>
-		</Group>}
+			<Group title="User Data Fetched with VK Bridge">
+				<Cell
+					before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200} /> : null}
+					description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
+				>
+					<p> Привет {`${fetchedUser.first_name} ${fetchedUser.last_name}`}! Давай соберем твой ПК!</p>
+				</Cell>
+			</Group>}
 
 		<Group title="Navigation Example">
 			<Div>
 				<Button size="xl" level="2" onClick={go} data-to="persik">
-					Покажи 
+					Покажи
 				</Button>
 			</Div>
 		</Group>
+		<FormLayout>
+			<Group title="Оценка">
+
+			</Group>
+			
+			<Group title="Комплектующие" >
+				<Select placeholder="Видеокарта">
+					<option value="Videocard-9">Nvidia RTX 3090</option>
+					<option value="Videocard-5">Radeon RX 5800TX</option>
+					<option value="Videocard-7">Nvidia RTX 2080Ti</option>
+
+				</Select>
+				<Select placeholder="Процессор">
+					<option value="Videocard-9">AMD Ryzen 7 5000</option>
+					<option value="Videocard-5">Intel Core i7 11700</option>
+					<option value="Videocard-7">Intel Core i5 9300</option>
+
+				</Select>
+				<Select placeholder="Колличество оперативной памяти">
+					<option value="Videocard-9">32Gb</option>
+					<option value="Videocard-5">16Gb</option>
+					<option value="Videocard-7">8Gb</option>
+
+				</Select>
+				<Select placeholder="HDD или SSD">
+					<option value="Videocard-6">SSD</option>
+					<option value="Videocard-9">SSD (NVMe)</option>
+					<option value="Videocard-4">HDD</option>
+
+				</Select>
+
+			</Group>
+		</FormLayout>
+
 	</Panel>
 );
 
