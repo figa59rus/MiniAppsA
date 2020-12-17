@@ -9,6 +9,9 @@ import Div from '@vkontakte/vkui/dist/components/Div/Div';
 import Avatar from '@vkontakte/vkui/dist/components/Avatar/Avatar';
 import { FormLayout, Select } from '@vkontakte/vkui';
 
+import './Home.css';
+
+let Resoult=0;
 
 const Home = ({ id, go, fetchedUser }) => (
 	<Panel id={id}>
@@ -23,18 +26,22 @@ const Home = ({ id, go, fetchedUser }) => (
 				</Cell>
 			</Group>}
 
-		<Group title="Navigation Example">
+		{/*<Group title="Navigation Example">
 			<Div>
 				<Button size="xl" level="2" onClick={go} data-to="persik">
 					Покажи
 				</Button>
 			</Div>
 		</Group>
+		*/}
+		
 		<FormLayout>
 			<Group title="Оценка">
-
+				<div className="Circle">
+					<p className="Resoult">{Resoult}</p>
+				</div>
 			</Group>
-			
+
 			<Group title="Комплектующие" >
 				<Select placeholder="Видеокарта">
 					<option value="Videocard-9">Nvidia RTX 3090</option>
@@ -43,21 +50,21 @@ const Home = ({ id, go, fetchedUser }) => (
 
 				</Select>
 				<Select placeholder="Процессор">
-					<option value="Videocard-9">AMD Ryzen 7 5000</option>
-					<option value="Videocard-5">Intel Core i7 11700</option>
-					<option value="Videocard-7">Intel Core i5 9300</option>
+					<option value="Processor-9">AMD Ryzen 7 5000</option>
+					<option value="Processor-5">Intel Core i7 11700</option>
+					<option value="Processor-7">Intel Core i5 9300</option>
 
 				</Select>
 				<Select placeholder="Колличество оперативной памяти">
-					<option value="Videocard-9">32Gb</option>
-					<option value="Videocard-5">16Gb</option>
-					<option value="Videocard-7">8Gb</option>
+					<option value="RAM-9">32Gb</option>
+					<option value="RAM-5">16Gb</option>
+					<option value="RAM-7">8Gb</option>
 
 				</Select>
 				<Select placeholder="HDD или SSD">
-					<option value="Videocard-6">SSD</option>
-					<option value="Videocard-9">SSD (NVMe)</option>
-					<option value="Videocard-4">HDD</option>
+					<option value="Storage-6">SSD</option>
+					<option value="Storage-9">SSD (NVMe)</option>
+					<option value="Storage-4">HDD</option>
 
 				</Select>
 

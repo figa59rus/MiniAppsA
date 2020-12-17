@@ -1,0 +1,15 @@
+.Circle{
+    height: 12rem;
+    width: 12rem;
+    border-radius: 50%;
+    background-color: aqua;
+    margin: auto;
+    text-align: center;
+}
+
+.Resoult{
+    padding: 5rem 0;
+    font-size: 250%;
+    color: white;
+    text-shadow: black;
+}
