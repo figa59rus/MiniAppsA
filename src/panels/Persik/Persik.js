@@ -12,23 +12,25 @@ import './Persik.css';
 
 const osName = platform();
 
-const Persik = props => (
-	<Panel id={props.id}>
-		<PanelHeader
-			left={<PanelHeaderButton onClick={props.go} data-to="home">
-				{osName === IOS ? <Icon28ChevronBack/> : <Icon24Back/>}
-			</PanelHeaderButton>}
-		>
-			Hm?
-		</PanelHeader>
-		<img className="Persik" src={persik} alt="Persik The Cat"/>
-		<p>Тут что-то появится</p>
-	</Panel>
+const Persik = (props) => (
+    <Panel id={props.id}>
+        <PanelHeader
+            left={
+                <PanelHeaderButton onClick={props.go} data-to="home">
+                    {osName === IOS ? <Icon28ChevronBack /> : <Icon24Back />}
+                </PanelHeaderButton>
+            }
+        >
+            Hm?
+        </PanelHeader>
+        <img className="Persik" src={persik} alt="Persik The Cat" />
+        <p>Тут что-то появится</p>
+    </Panel>
 );
 
 Persik.propTypes = {
-	id: PropTypes.string.isRequired,
-	go: PropTypes.func.isRequired,
+    id: PropTypes.string.isRequired,
+    go: PropTypes.func.isRequired,
 };
 
 export default Persik;
