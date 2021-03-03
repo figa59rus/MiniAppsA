@@ -8,7 +8,7 @@ import './Home.css';
 
 console.log(store);
 
-export const Home = ({ id, go, fetchedUser }) => {
+export const Home = ({ id, go, fetchedUser, snackbarError, fetchedState}) => {
     const [score, setScore] = useState(0);
     const [values, setValues] = useState({});
     const [selectedGpu, setSelectedGpu] = useState(null);
@@ -32,7 +32,7 @@ export const Home = ({ id, go, fetchedUser }) => {
     return (
         <Panel id={id}>
             <PanelHeader>Твой ПК</PanelHeader>
-            {fetchedUser && (
+            {fetchedUser && fetchedState (
                 <Group title="User Data Fetched with VK Bridge">
                     <Cell
                         before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200} /> : null}
