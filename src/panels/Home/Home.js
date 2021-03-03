@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { Panel, PanelHeader, Button, Group, Cell, Div, Avatar, FormLayout, Select } from '@vkontakte/vkui';
+import { Panel, PanelHeader, Button, Group, Cell, Div, Avatar, FormLayout, NativeSelect, Card,CardScroll,} from '@vkontakte/vkui';
 
 import store from '../../store/hardware';
 
@@ -11,7 +11,6 @@ console.log(store);
 export const Home = ({ id, go, fetchedUser, snackbarError, fetchedState}) => {
     const [score, setScore] = useState(0);
     const [values, setValues] = useState({});
-    const [selectedGpu, setSelectedGpu] = useState(null);
 
     const onSelectChange = (event, selectIndex) => {
         const { name, options } = store[selectIndex];
@@ -43,14 +42,6 @@ export const Home = ({ id, go, fetchedUser, snackbarError, fetchedState}) => {
                 </Group>
             )}
 
-            <Group title="Navigation Example">
-                <Div>
-                    <Button size="xl" level="2" onClick={go} data-to="persik">
-                        Покажи
-                    </Button>
-                </Div>
-            </Group>
-
             <FormLayout>
                 <Group title="Оценка">
                     <div className="Circle">
@@ -59,7 +50,7 @@ export const Home = ({ id, go, fetchedUser, snackbarError, fetchedState}) => {
                 </Group>
                 <Group title="Комплектующие" className="hardwares">
                     {store.map(({ name, options }, selectIndex) => (
-                        <Select
+                        <NativeSelect
                             key={name}
                             placeholder={name}
                             value={values?.[name]}
@@ -70,7 +61,7 @@ export const Home = ({ id, go, fetchedUser, snackbarError, fetchedState}) => {
                                     {item.name}
                                 </option>
                             ))}
-                        </Select>
+                        </NativeSelect>
                     ))}
                 </Group>
 
@@ -78,6 +69,16 @@ export const Home = ({ id, go, fetchedUser, snackbarError, fetchedState}) => {
                     <Button level="3" component="a" onClick={go} data-to="urls">Где купить?</Button>
                 </Div>
             </FormLayout>
+            <Group title="Navigation Example">
+                <Div style={{ display: 'flex' }}>
+                    <Button size="l" onClick={go} data-to="persik" stretched style={{ marginRight: 8 }}>
+                        Постмотреть игры
+                    </Button>
+                    <Button size="l" onClick={go} data-to="testview" stretched mode="secondary">
+                        Test
+                    </Button>
+                </Div>
+            </Group>
         </Panel>
     );
 };

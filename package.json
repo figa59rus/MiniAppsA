@@ -1,6 +1,6 @@
 {
-  "name": "YoursPC",
-  "version": "1.0.0",
+  "name": "Твой ПК",
+  "version": "0.0.4",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -17,13 +17,13 @@
     "cross-env": "^5.2.0",
     "prettier": "^2.2.1",
     "react-hot-loader": "^4.9.0",
-    "react-scripts": "^3.4.1"
+    "react-scripts": "^4.0.3"
   },
   "dependencies": {
     "@vkontakte/icons": "^1.18.2",
     "@vkontakte/vk-bridge": "^2.3.0",
     "@vkontakte/vk-miniapps-deploy": "^0.0.17",
-    "@vkontakte/vkui": "^3.5.0",
+    "@vkontakte/vkui": "^4.2.0",
     "babel-eslint": "^10.1.0",
     "chalk": "^2.4.2",
     "core-js": "^3.6.4",

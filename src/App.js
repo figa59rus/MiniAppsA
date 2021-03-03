@@ -7,8 +7,9 @@ import '@vkontakte/vkui/dist/vkui.css';
 import Home from './panels/Home/';
 import Intro from './panels/Intro';
 import Persik from './panels/Persik';
-import URLs from './panels/URLs';
 
+import URLs from './panels/URLs';
+import Testview from './panels/TestView';
 const ROUTES = {
 	HOME: 'home',
 	INTRO: 'intro',
