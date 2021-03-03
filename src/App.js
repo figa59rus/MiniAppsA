@@ -7,11 +7,13 @@ import '@vkontakte/vkui/dist/vkui.css';
 import Home from './panels/Home/';
 import Intro from './panels/Intro';
 import Persik from './panels/Persik';
+import URLs from './panels/URLs';
 
 const ROUTES = {
 	HOME: 'home',
 	INTRO: 'intro',
-	PERSIK: 'persik'
+	PERSIK: 'persik',
+	URLS: 'urls'
 };
 
 const App = () => {
@@ -44,6 +46,7 @@ const App = () => {
             <Home id={ROUTES.HOME} fetchedUser={fetchedUser} go={go} />
 			<Intro id={ROUTES.INTRO} go={go}/>
             <Persik id={ROUTES.PERSIK} go={go} />
+			<URLs id={ROUTES.URLS} go={go}/>
         </View>
     );
 };

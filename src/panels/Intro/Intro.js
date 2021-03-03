@@ -17,11 +17,13 @@ export const Intro = ({ id, go }) => (
 					<Div className='Hello'>
 						<h2>Добро пожаловать!</h2>
 						<h3>Этот сервис поможет тебе оценить твой PC, узнать в какие игры и на каких настройках ты сможешь играть! И это далеко не всё...</h3>
+					</Div>
+					<Div className='Image'>
 						<img className="Witcher" src={witcher} />
 					</Div>
 				</Group>
 				<FixedLayout vertical='bottom'>
-					<Div>
+					<Div className='Image'>
 						<Button mode='commerce' size="xl" level="2" onClick={go} data-to="home">
 							ОК, всё понятно
 						</Button>

@@ -1,0 +1,27 @@
+.Header {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+.Text {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    margin: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.Url {
+    display: flex;
+    flex-direction: line;
+    justify-content: center;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.Image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 0;
+    padding-bottom: 0;
+}

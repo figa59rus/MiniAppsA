@@ -73,6 +73,10 @@ export const Home = ({ id, go, fetchedUser, snackbarError, fetchedState}) => {
                         </Select>
                     ))}
                 </Group>
+
+                <Div className="footer">
+                    <Button level="3" component="a" onClick={go} data-to="urls">Где купить?</Button>
+                </Div>
             </FormLayout>
         </Panel>
     );
