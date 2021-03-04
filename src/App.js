@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import bridge from '@vkontakte/vk-bridge';
 import View from '@vkontakte/vkui/dist/components/View/View';
 import ScreenSpinner from '@vkontakte/vkui/dist/components/ScreenSpinner/ScreenSpinner';
@@ -13,7 +13,9 @@ import URLs from './panels/URLs';
 const ROUTES = {
 	HOME: 'home',
 	INTRO: 'intro',
-	URLS: 'urls'
+	URLS: 'urls',
+  GAMELIST: 'gamelist',
+  TESTVIEW: 'testview'
 };
 
 const App = () => {
@@ -44,8 +46,10 @@ const App = () => {
     return (
         <View activePanel={activePanel} popout={popout}>
             <Home id={ROUTES.HOME} fetchedUser={fetchedUser} go={go} />
-			<Intro id={ROUTES.INTRO} go={go}/>
-			<URLs id={ROUTES.URLS} go={go}/>
+			      <Intro id={ROUTES.INTRO} go={go}/>
+			      <URLs id={ROUTES.URLS} go={go}/>
+            <GameList id={ROUTES.GAMELIST} go={go} />
+            <Testview id={ROUTES.TESTVIEW} go={go} />
         </View>
     );
 };

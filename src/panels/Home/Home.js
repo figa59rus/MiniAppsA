@@ -1,6 +1,22 @@
 import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { Panel, PanelHeader, Button, Group, Cell, Div, Avatar, FormLayout, NativeSelect, Card,CardScroll,} from '@vkontakte/vkui';
+
+import {
+    Panel,
+    PanelHeader,
+    Button,
+    Group,
+    Cell,
+    Div,
+    Avatar,
+    FormLayout,
+    NativeSelect,
+    FixedLayout,
+    PromoBanner,
+    Card,
+    CardScroll,
+} from '@vkontakte/vkui';
+
 
 import store from '../../store/hardware';
 
@@ -8,7 +24,7 @@ import './Home.css';
 
 console.log(store);
 
-export const Home = ({ id, go, fetchedUser, snackbarError, fetchedState}) => {
+export const Home = ({ id, go, fetchedUser }) => {
     const [score, setScore] = useState(0);
     const [values, setValues] = useState({});
 
@@ -27,8 +43,9 @@ export const Home = ({ id, go, fetchedUser, snackbarError, fetchedState}) => {
         setScore(score - currentValue + selectedOption.value);
         setValues({ ...values, [name]: selectedOption });
     };
-	
-	const promoBannerProps = {
+
+    //Параметры банера
+    const promoBannerProps = {
         title: 'Заголовок',
         domain: 'vk.com',
         trackingLink: 'https://vk.com',
@@ -42,11 +59,11 @@ export const Home = ({ id, go, fetchedUser, snackbarError, fetchedState}) => {
             { url: '', type: 'click' },
         ],
     };
-	
+
     return (
         <Panel id={id}>
             <PanelHeader>Твой ПК</PanelHeader>
-            {fetchedUser && fetchedState (
+            {fetchedUser && (
                 <Group title="User Data Fetched with VK Bridge">
                     <Cell
                         before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200} /> : null}
@@ -79,14 +96,10 @@ export const Home = ({ id, go, fetchedUser, snackbarError, fetchedState}) => {
                         </NativeSelect>
                     ))}
                 </Group>
-
-                <Div className="footer">
-                    <Button level="3" component="a" onClick={go} data-to="urls">Где купить?</Button>
-                </Div>
             </FormLayout>
             <Group title="Navigation Example">
                 <Div style={{ display: 'flex' }}>
-                    <Button size="l" onClick={go} data-to="persik" stretched style={{ marginRight: 8 }}>
+                    <Button size="l" onClick={go} data-to="gamelist" stretched style={{ marginRight: 8 }}>
                         Постмотреть игры
                     </Button>
                     <Button size="l" onClick={go} data-to="testview" stretched mode="secondary">
@@ -94,6 +107,9 @@ export const Home = ({ id, go, fetchedUser, snackbarError, fetchedState}) => {
                     </Button>
                 </Div>
             </Group>
+            <FixedLayout vertical="bottom">
+                <PromoBanner bannerData={promoBannerProps} />
+            </FixedLayout>
         </Panel>
     );
 };
